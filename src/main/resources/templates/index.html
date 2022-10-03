@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hey Mr. Tomato</title>
+</head>
+<body>
+<img id = "tomato" src="/tomato.png" height="738" width="816" alt = "tomato graphic"/></body>
+<script>
+    var tomato = document.getElementById("tomato");
+    tomato.onclick = function(e) {
+        alert("See you again in 25 minutes!");
+        fetch("/timer", {method:"POST"})
+            .then(response => response.text())
+            .then(data => console.log(data));
+    }
+</script>
+</html>

@@ -26,9 +26,9 @@ public class MessageRestController {
     @PostMapping(value = "/timer")
     @ResponseBody
     public String scheduleSMS() {
-        final ZonedDateTime sendTime = ZonedDateTime.now().plus(16, ChronoUnit.MINUTES);
+        final ZonedDateTime sendTime = ZonedDateTime.now().plus(26, ChronoUnit.MINUTES);
         Message message = Message.creator(
-                        new com.twilio.type.PhoneNumber("+14087038642"),
+                        new com.twilio.type.PhoneNumber(PHONE_NUMBER),
                         TWILIO_MESSAGING_SERVICE_SID,
                         "Hey, it's Mr. Tomato telling you that 25 minutes have passed!")
                 .setSendAt(sendTime)
